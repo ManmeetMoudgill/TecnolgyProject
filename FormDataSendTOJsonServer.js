@@ -12,10 +12,78 @@ function Info(givenNome,givenCognome,givendataDiNascita,givenLuogoNascita,givenN
     this.eta=giveneta;
     this.residenza=givenresidenza;
     this.numerofam=givenNumeroFam;
-    this.interessefam=givenIntereFam;
+    this.interessefam=givenIntereFam;Tag
 
    
 }
+
+//tre variabile globali che ho creati per poi convaildare dei input
+let nomeValido=false;
+let cognomeValido=false;
+let numeroDiTelefonoValido=false;
+let emailValido=false;
+
+let nomeInputTag=document.getElementById('nome');
+let CognomeInputTag=document.getElementById('cognome');
+let numeroTelefonoInputTag=document.getElementById('numeroDiTelefono');
+let emailInputTag=document.getElementById('email');
+
+
+//per convaildare se il nome che il cliente insersci è valido
+nomeInputTag.addEventListener('blur',()=>{
+  let regx=/^[a-zA-Z]([a-zA-Z]){2,20}$/;
+  let stringNomeVer=nomeInputTag.value;
+  if(regx.test(stringNomeVer)){
+    nomeInputTag.classList.remove("is-invalid");
+    nomeValido=true;
+    
+  }else{
+    nomeInputTag.classList.add("is-invalid");
+    
+  }
+})
+
+//per convalidare se il client inserisce il nome valid ovver il nome puo inziare 
+//da un lettera minuscolo o maiuscolo per non può inziare con un numero
+
+CognomeInputTag.addEventListener('blur',()=>{
+  let regx1=/^[a-zA-Z]([a-zA-Z]){2,20}$/;
+  let stringCognome=CognomeInputTag.value;
+  if(regx1.test(stringCognome)){
+    CognomeInputTag.classList.remove("is-invalid");
+    cognomeValido=true;
+  }else{
+    CognomeInputTag.classList.add("is-invalid");
+  }
+})
+
+
+//per convalidare se il client inserisce email giusto..
+emailInputTag.addEventListener('blur',()=>{
+  let regx2=/^([\-\._0-9a-zA-Z])@([A-Za-z0-9])\.([a-zA-Z])/;
+  let stringEmail=emailInputTag.value;
+  if(regx2.test(stringEmail)){
+    emailInputTag.classList.remove("is-invalid");
+    emailValido=true;
+  }else{
+    emailInputTag.classList.add("is-invalid");
+  }
+})
+
+//per convalidare se il client inserisce il numeroDiTelefono giusto
+
+numeroTelefonoInputTag.addEventListener('blur',()=>{
+  let regx3=/^([0-9]){10}$/;
+  let StringnumeroTelefono=numeroTelefonoInputTag.value;
+  if(regx3.test(StringnumeroTelefono)){
+    numeroTelefonoInputTag.classList.remove("is-invalid");
+    numeroDiTelefonoValido=true;
+  }else{
+    numeroTelefonoInputTag.classList.add("is-invalid");
+  }
+})
+
+
 
 
 

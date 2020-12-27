@@ -41,3 +41,6 @@ table#tableDec {
     opacity: 0.8;
 
 } 
+.text-muted {
+    color: white!important; 
+}
