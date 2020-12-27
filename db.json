@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "nome": "Manmeet",
+      "cognome": "Moudgill",
+      "DataDiNascita": "85-01-2001",
+      "Email": "Manmeet@gmail.com",
+      "LuogoDiNascita": "Ludhiana,Punjab Inida",
+      "NumeroDiTelefono": "3255668877",
+      "Cap": "04800",
+      "Eta": "25",
+      "Residenza": "Via Americano,14",
+      "NumeroFamiliare": "6",
+      "InteresseFamiliare": "2000Euro",
+      "id": 1
+    },{
+        "nome": "Sakshi",
+        "cognome": "Moudgill",
+        "DataDiNascita": "85-01-2001",
+        "Email": "Sakshi@gmail.com",
+        "LuogoDiNascita": "Ludhiana,Punjab Inida",
+        "NumeroDiTelefono": "3255668877",
+        "Cap": "04800",
+        "Eta": "25",
+        "Residenza": "Via Americano,14",
+        "NumeroFamiliare": "6",
+        "InteresseFamiliare": "2000Euro",
+        "id": 1
+      }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
