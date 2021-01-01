@@ -12,7 +12,7 @@ function Info(givenNome,givenCognome,givendataDiNascita,givenLuogoNascita,givenN
     this.eta=giveneta;
     this.residenza=givenresidenza;
     this.numerofam=givenNumeroFam;
-    this.interessefam=givenIntereFam;Tag
+    this.interessefam=givenIntereFam;
 
    
 }
