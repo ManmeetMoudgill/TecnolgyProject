@@ -60,7 +60,7 @@ CognomeInputTag.addEventListener('blur',()=>{
 
 //per convalidare se il client inserisce email giusto..
 emailInputTag.addEventListener('blur',()=>{
-  let regx2=/^([\-\._0-9a-zA-Z])@([A-Za-z0-9])\.([a-zA-Z])/;
+  let regx2=/^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
   let stringEmail=emailInputTag.value;
   if(regx2.test(stringEmail)){
     emailInputTag.classList.remove("is-invalid");
