@@ -43,7 +43,7 @@ nomeInputTag.addEventListener('blur',()=>{
   }
 })
 
-//per convalidare se il client inserisce il nome valid ovver il nome puo inziare 
+//per convalidare se il client inserisce il cognome valid ovver il nome puo inziare 
 //da un lettera minuscolo o maiuscolo per non può inziare con un numero
 
 CognomeInputTag.addEventListener('blur',()=>{
@@ -58,7 +58,7 @@ CognomeInputTag.addEventListener('blur',()=>{
 })
 
 
-
+//per convalidare se il client inserisce email giusto..
 
 
 //per convalidare se il client inserisce il numeroDiTelefono giusto
@@ -85,6 +85,7 @@ submitButtonInfo.addEventListener('click',(event)=>{
     event.preventDefault();
     let nomeInput=document.getElementById('nome').value;
     let CognomeInput=document.getElementById('cognome').value;
+    console.log(CognomeInput);
     let dataDiNascitaInput=document.getElementById('dataDiNascita').value;
     let luogoDiNascitaInput=document.getElementById('luogoDiNascita').value;
     let numeroTelefonoInput=document.getElementById('numeroDiTelefono').value;
@@ -97,12 +98,10 @@ submitButtonInfo.addEventListener('click',(event)=>{
     
     let newObject=new Info(nomeInput,CognomeInput,dataDiNascitaInput,luogoDiNascitaInput,numeroTelefonoInput,
         emailInput,capInput,etaInput,ResidenzaInput,numeroFamInput,InteressiFamInput);
-    console.log(newObject);
-    console.log(newObject.nome);
+      console.log(newObject);
+   
 
-
-    
-      if(nomeInput==="" || cognomeInput==="" || dataDiNascitaInput==="" || luogoDiNascitaInput==="" || numeroTelefonoInput==" " || emailInput===""
+      if(nomeInput==="" || CognomeInput==="" || dataDiNascitaInput==="" || luogoDiNascitaInput==="" || numeroTelefonoInput==" " || emailInput===""
       ||capInput==="" || emailInput==="" || ResidenzaInput==="" || numeroFamInput==="" || InteressiFamInput===""){
           let messageDiv=document.getElementById('messageDiv');
           let stringMessage=`  <div class="alert alert-danger alert-dismissible" role="alert">
@@ -110,12 +109,16 @@ submitButtonInfo.addEventListener('click',(event)=>{
           <strong>Attenzione!</strong> Non puoi Lasciare i campi in bianco.
         </div>`;
          messageDiv.innerHTML=stringMessage;
-      }else{
+      }
+        else{
+
+         
         let url='http://localhost:3000/posts';
         let params={
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify(newObject)
+          
         }
        
        
@@ -125,15 +128,17 @@ submitButtonInfo.addEventListener('click',(event)=>{
          console.log(data);
          alert('Data Has been sent Succesfully')
         }).catch(()=>console.error("SomeThing went wrong")) 
-       
       }
-    })
+       
+})
 
     
 let ShowButtonDiv=document.getElementById('ShowButtonInfo');
-ShowButtonDiv.addEventListener('click',callGetData);
+ShowButtonDiv.addEventListener('click',getDatafromServer);
 
 //function used to call the function getDatafromServer for getting the data from the server
+
+  
 
 
 
@@ -143,7 +148,7 @@ ShowButtonDiv.addEventListener('click',callGetData);
 
 
 let j=1;
-function callGetData(){
+function getDatafromServer(){
   if(j===1){
   let url="http://localhost:3000/posts";
   
