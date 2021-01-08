@@ -102,7 +102,7 @@ submitButtonInfo.addEventListener('click',(event)=>{
 
 
     
-      if(nomeInput==="" || cognome==="" || dataDiNascitaInput==="" || luogoDiNascitaInput==="" || numeroTelefonoInput==" " || emailInput===""
+      if(nomeInput==="" || cognomeInput==="" || dataDiNascitaInput==="" || luogoDiNascitaInput==="" || numeroTelefonoInput==" " || emailInput===""
       ||capInput==="" || emailInput==="" || ResidenzaInput==="" || numeroFamInput==="" || InteressiFamInput===""){
           let messageDiv=document.getElementById('messageDiv');
           let stringMessage=`  <div class="alert alert-danger alert-dismissible" role="alert">
@@ -134,9 +134,7 @@ let ShowButtonDiv=document.getElementById('ShowButtonInfo');
 ShowButtonDiv.addEventListener('click',callGetData);
 
 //function used to call the function getDatafromServer for getting the data from the server
-function callGetData(){
-  getDatafromServer();
-}
+
 
 
 
@@ -145,7 +143,7 @@ function callGetData(){
 
 
 let j=1;
-function getDatafromServer(){
+function callGetData(){
   if(j===1){
   let url="http://localhost:3000/posts";
   
@@ -163,15 +161,15 @@ function getDatafromServer(){
       <tr class="table-striped">
               <td>${dataFetched[i].nome}</td>
               <td>${dataFetched[i].cognome}</td>
-              <td>${dataFetched[i].DataDiNascita}</td>
-              <td>${dataFetched[i].Email}</td>
-              <td>${dataFetched[i].LuogoDiNascita}</td>
-              <td>${dataFetched[i].NumeroDiTelefono}</td>
-              <td>${dataFetched[i].Cap}</td>
-              <td>${dataFetched[i].Eta}</td>
-              <td>${dataFetched[i].Residenza}</td>
-              <td>${dataFetched[i].NumeroFamiliare}</td>
-              <td>${dataFetched[i].InteresseFamiliare}</td>
+              <td>${dataFetched[i].dataDiNascita}</td>
+              <td>${dataFetched[i].email}</td>
+              <td>${dataFetched[i].luogonascita}</td>
+              <td>${dataFetched[i].numerotel}</td>
+              <td>${dataFetched[i].cap}</td>
+              <td>${dataFetched[i].eta}</td>
+              <td>${dataFetched[i].residenza}</td>
+              <td>${dataFetched[i].numerofam}</td>
+              <td>${dataFetched[i].interessefam}</td>
               </tr>
               </table>`;
               
